@@ -51,7 +51,7 @@ endif()
 set(BASISU_SRC_LIST ${COMMON_SRC_LIST} 
 	jpgd.cpp
 	jpge.cpp
-	tga2jpg.cpp
+	
 	timer.cpp
 	)
 
@@ -59,7 +59,9 @@ set(BIN_DIRECTORY "bin")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${BIN_DIRECTORY})
 
-add_executable(jpge ${BASISU_SRC_LIST})
+#add_executable(jpge ${BASISU_SRC_LIST})
+add_library(jpge ${BASISU_SRC_LIST} "stb_image_resize.h")
 
-install(TARGETS jpge DESTINATION bin)
+#install(TARGETS jpge DESTINATION bin)
+install(TARGETS jpge DESTINATION lib)
 
